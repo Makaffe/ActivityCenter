@@ -1,0 +1,16 @@
+PODS:
+  - BmobSDK (2.3.1)
+
+DEPENDENCIES:
+  - BmobSDK
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - BmobSDK
+
+SPEC CHECKSUMS:
+  BmobSDK: e0f9e4b451233a80af63a8ae4f2d239474bf567b
+
+PODFILE CHECKSUM: 96715b1a4209ad37d42ea244b6b08e9ddbfa53ed
+
+COCOAPODS: 1.5.0
