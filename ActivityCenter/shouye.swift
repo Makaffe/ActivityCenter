@@ -14,6 +14,8 @@ class shouye: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     @IBAction func xiangqing(_ sender: Any) {
         
+        tapped();
+        
     }
     
     @IBOutlet weak var tableview: UITableView!
@@ -144,5 +146,10 @@ class shouye: UIViewController,UITableViewDataSource,UITableViewDelegate {
         tableView.rowHeight = 240
         
         return cell
+    }
+   func tapped(){
+    let urlString = "weixin://"
+    let url = URL(string: urlString)
+    UIApplication.shared.open(url!)
     }
 }

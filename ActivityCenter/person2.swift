@@ -25,17 +25,15 @@ class person2: UIViewController,UINavigationControllerDelegate,UITableViewDataSo
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 1
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
-        var str = String(indexPath.row + 1)
         
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell"+str)! as UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell2")! as UITableViewCell
         return cell;
     }
 }
