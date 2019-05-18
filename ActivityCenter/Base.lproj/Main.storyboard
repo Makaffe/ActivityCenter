@@ -911,7 +911,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JB5-Ih-VgD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-383" y="1361"/>
+            <point key="canvasLocation" x="-1259" y="1946"/>
         </scene>
         <!--Person-->
         <scene sceneID="oro-SL-00z">
@@ -1004,7 +1004,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b2J-iV-MZN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="408.69565217391306" y="1262.771739130435"/>
+            <point key="canvasLocation" x="313" y="549"/>
         </scene>
         <!--个人-->
         <scene sceneID="uDe-Th-3rv">
@@ -1063,9 +1063,6 @@
                                                     <state key="normal" title="发布活动">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
-                                                    <connections>
-                                                        <segue destination="dB6-ma-E5g" kind="show" id="eGw-G6-ePX"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1094,7 +1091,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrs-Ma-H9z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="311.59420289855075" y="548.64130434782612"/>
+            <point key="canvasLocation" x="-430" y="1946"/>
         </scene>
     </scenes>
     <resources>
@@ -1112,7 +1109,4 @@
         <image name="联系-A" width="60" height="60"/>
         <image name="锁-1" width="200" height="200"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="FEy-fi-bgs"/>
-    </inferredMetricsTieBreakers>
 </document>
