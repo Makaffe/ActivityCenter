@@ -8,10 +8,29 @@
 
 import UIKit
 
-class person: UIViewController {
-    var table : person2?
+class person: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    @IBOutlet weak var tableview: UITableView!
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let str =  String(indexPath.row+1)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell"+str)! as UITableViewCell
+        
+        cell.layer.shadowColor = UIColor.gray.cgColor
+        cell.layer.shadowRadius = 2;
+        cell.layer.shadowOpacity = 0.5
+        cell.layer.masksToBounds = false
+        tableView.rowHeight = 128
+        
+        return cell
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableview.dataSource = self
+        tableview.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -20,19 +39,5 @@ class person: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "table" {
-            table = segue.destination as? person2
-        }
-    }
+
 }
