@@ -9,14 +9,9 @@
 import UIKit
 
 class shouye: UIViewController,UITableViewDataSource,UITableViewDelegate {
-    
+     let exInfo = Model.exaidInfo
     var str1 :[String] = ["正在加载中"] , str2 : [String] = ["正在加载中"] ,str3 :[String] = ["正在加载中"] , str4 :[String] = ["正在加载中"] , str5:[UIImage]=[#imageLiteral(resourceName: "星空")]
     
-    @IBAction func xiangqing(_ sender: Any) {
-        
-        tapped();
-        
-    }
     
     @IBOutlet weak var tableview: UITableView!
     
@@ -121,7 +116,9 @@ class shouye: UIViewController,UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return str1.count
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
@@ -130,7 +127,10 @@ class shouye: UIViewController,UITableViewDataSource,UITableViewDelegate {
         cell.layer.shadowRadius = 2;
         cell.layer.shadowOpacity = 0.5
         cell.layer.masksToBounds = false
-
+        cell.selectedBackgroundView = UIView()
+        cell.selectedBackgroundView?.backgroundColor = UIColor(named: "bg2")
+       // let info = exInfo[indexPath.row]
+        
         let label1 = cell.viewWithTag(1) as! UILabel
         let label2 = cell.viewWithTag(2) as! UILabel
         let label3 = cell.viewWithTag(3) as! UILabel
@@ -147,9 +147,19 @@ class shouye: UIViewController,UITableViewDataSource,UITableViewDelegate {
         
         return cell
     }
-   func tapped(){
-    let urlString = "weixin://"
-    let url = URL(string: urlString)
-    UIApplication.shared.open(url!)
+    @IBAction func close(segue: UIStoryboardSegue) {
+        
     }
-}
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "web" {
+            let web = segue.destination as! webviewcontroller
+            let info = exInfo[tableview.indexPathForSelectedRow!.row]
+            web.url = info.url
+            web.exTitle = info.name
+            
+        }
+    }
+    }
+
+

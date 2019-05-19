@@ -6,7 +6,7 @@
 //  Copyright © 2019年 hph. All rights reserved.
 //
 
-import UIKit
+/*import UIKit
 
 class person2: UIViewController,UINavigationControllerDelegate,UITableViewDataSource,UITableViewDelegate{
     
@@ -37,4 +37,4 @@ class person2: UIViewController,UINavigationControllerDelegate,UITableViewDataSo
         return cell;
     }
 }
-
+*/

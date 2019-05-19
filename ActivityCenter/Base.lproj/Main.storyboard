@@ -463,20 +463,17 @@
                                                     <color key="textColor" red="0.79300840736040612" green="0.53865684230765998" blue="0.14735794303576646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWG-hv-U3u">
-                                                    <rect key="frame" x="311" y="188" width="54" height="51"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="联系-A" translatesAutoresizingMaskIntoConstraints="NO" id="1gW-b9-T3A">
+                                                    <rect key="frame" x="324" y="185" width="50" height="54"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" image="联系-A">
-                                                        <color key="titleColor" red="1" green="0.45733255741952017" blue="0.0408127615104803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="xiangqing:" destination="0YQ-Rb-sHk" eventType="touchUpInside" id="Vld-Ab-3c5"/>
-                                                    </connections>
-                                                </button>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.89151729060913709" green="0.83029698871233548" blue="0.57577347374153176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <segue destination="xvj-JK-Tsl" kind="show" identifier="web" id="idC-KE-cE0"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -498,7 +495,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N6n-g1-RRP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1283" y="-558"/>
+            <point key="canvasLocation" x="1282.608695652174" y="-558.42391304347825"/>
+        </scene>
+        <!--Webviewcontroller-->
+        <scene sceneID="fub-bZ-SWx">
+            <objects>
+                <viewController id="xvj-JK-Tsl" customClass="webviewcontroller" customModule="ActivityCenter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EvE-MZ-9eg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="2sT-jw-l8c"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mKY-M7-d1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2167" y="-558"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="zKu-tO-Mcf">
@@ -527,7 +539,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5m-lF-TDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="954" y="-125"/>
+            <point key="canvasLocation" x="2761" y="178"/>
         </scene>
         <!--聊天-->
         <scene sceneID="fAE-4C-Sy1">
@@ -544,7 +556,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="73B-EZ-dp3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="222" y="-126"/>
+            <point key="canvasLocation" x="1713" y="178"/>
         </scene>
         <!--活动-->
         <scene sceneID="k0c-HZ-vKK">
