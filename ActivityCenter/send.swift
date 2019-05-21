@@ -13,6 +13,7 @@ class send: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate
     @IBOutlet weak var address: UITextField!
     @IBOutlet weak var time: UITextField!
     @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var link: UITextField!
     
     var str:String=""
     
@@ -27,7 +28,7 @@ class send: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate
     @IBAction func s(_ sender: Any) {
         
         if(!(name.text?.isEmpty)! && !(time.text?.isEmpty)! && !(address.text?.isEmpty)! && !str.isEmpty){
-        insertData(key1:"name",key2:"time",key3:"address",key4:"url")
+            insertData(key1:"name",key2:"time",key3:"address",key4:"url",key5:"linkurl")
             let alertController = UIAlertController(title: "系统提示", message: "发布成功", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "确定", style: .default, handler:{action in })
             alertController.addAction(okAction)
@@ -143,7 +144,7 @@ class send: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate
         }
     }
     
-    func insertData(key1:String,key2:String,key3:String,key4:String){
+    func insertData(key1:String,key2:String,key3:String,key4:String,key5:String){
         
         //创建表
         
@@ -155,6 +156,7 @@ class send: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate
         object!.setObject(time.text, forKey: key2)
         object!.setObject(address.text, forKey: key3)
         object!.setObject(str, forKey: key4)
+        object!.setObject(link.text, forKey: key5)
         
         
         //存储到云

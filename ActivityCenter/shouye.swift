@@ -9,9 +9,10 @@
 import UIKit
 
 class shouye: UIViewController,UITableViewDataSource,UITableViewDelegate {
-     let exInfo = Model.exaidInfo
-    var str1 :[String] = ["正在加载中"] , str2 : [String] = ["正在加载中"] ,str3 :[String] = ["正在加载中"] , str4 :[String] = ["正在加载中"] , str5:[UIImage]=[#imageLiteral(resourceName: "星空")]
     
+    var str1 :[String] = ["正在加载中"] , str2 : [String] = ["正在加载中"] ,str3 :[String] = ["正在加载中"] , str4 :[String] = ["正在加载中"] , str5:[UIImage]=[#imageLiteral(resourceName: "星空")],Stringurl:[String] = [],Stringname:[String] = []
+    //var Stringurl1 = ""
+    //var Stringname1 = ""
     
     @IBOutlet weak var tableview: UITableView!
     
@@ -71,10 +72,17 @@ class shouye: UIViewController,UITableViewDataSource,UITableViewDelegate {
                     let time = obj.object(forKey: "time") as! String
                     let address = obj.object(forKey: "address") as! String
                     let pic = obj.object(forKey: "url") as! String
+                    let link = obj.object(forKey: "linkurl")as! String
+                    
                     self.str1.append(name)
                     self.str2.append(time)
                     self.str3.append(address)
                     self.str4.append(pic)
+                    //self.Stringurl1 = link
+                    //self.Stringname1 = name
+                    self.Stringurl.append(link)
+                    self.Stringname.append(name)
+                    
                 }
                 self.images()
             }
@@ -154,12 +162,16 @@ class shouye: UIViewController,UITableViewDataSource,UITableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "web" {
             let web = segue.destination as! webviewcontroller
-            let info = exInfo[tableview.indexPathForSelectedRow!.row]
-            web.url = info.url
-            web.exTitle = info.name
+
+            print(tableview.indexPathForSelectedRow!.row)
             
-        }
+            web.url = Stringurl[str1.count-1-tableview.indexPathForSelectedRow!.row]
+            web.exTitle = Stringname[str1.count-1-tableview.indexPathForSelectedRow!.row]
+            
+            
+            
+        
     }
     }
 
-
+}
